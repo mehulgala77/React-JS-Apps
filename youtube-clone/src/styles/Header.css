@@ -1,0 +1,61 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    /* Note: Sticky background */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.header__logo {
+    height: 25px;
+    /* Note: to prevent png images from stretching */
+    object-fit: contain;
+    margin-left: 20px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+
+    width: 40%;
+    border: 1px solid lightgray;
+
+    padding-left: 10px;
+}
+
+/* Note: Cool way to style an input field */
+.header__search > input {
+    flex: 1;
+    border: none;
+}
+
+.header__search .search_btn {
+    width: 50px !important;
+    background-color: #fafafa;
+    border-left: 1px solid lightgray;
+    color: gray;
+}
+
+.search_btn_link {
+    display: flex;
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+}
+
+.header__icons .header_icon {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.header__avatar {
+    cursor: pointer;
+}

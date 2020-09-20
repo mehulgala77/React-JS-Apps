@@ -1,0 +1,21 @@
+
+.recommendedVideos {
+    flex: 0.8;
+    /* Note: Subtle gray background color */
+    background-color: #f9f9f9;
+    padding: 20px 20px 40px;
+    padding-bottom: none;
+
+    cursor: pointer;
+}
+
+.recommendedVideos h2 {
+    margin-left: 5px;
+    margin-bottom: 40px;
+}
+
+.recommendedVideos__videos {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
