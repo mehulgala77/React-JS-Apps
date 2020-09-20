@@ -27,6 +27,18 @@ function SearchPage({match}) {
                 <h2>Filter</h2>
             </div>
 
+            {videos.map(video => (
+                <VideoRow 
+                    key={video.id.videoId}
+                    videoId={video.id.videoId}
+                    desc={video.snippet.description}
+                    channel={video.snippet.channelTitle}
+                    title={video.snippet.title}
+                    image={video.snippet.thumbnails.high.url}
+                />
+            ))}
+
+            {/* This data is just for testing purpose. */}
             {/* <hr />
 
             <ChannelRow 
@@ -40,17 +52,7 @@ function SearchPage({match}) {
 
             {/* <hr /> */}
 
-            {videos.map(video => (
-                <VideoRow 
-                    key={video.id.videoId}
-                    desc={video.snippet.description}
-                    channel={video.snippet.channelTitle}
-                    title={video.snippet.title}
-                    image={video.snippet.thumbnails.high.url}
-                />
-            ))}
-
-            {/* <VideoRow 
+            <VideoRow 
                 views="115K"    
                 subs="659K"
                 desc="Fastest to 10,000 ODI runs. 41 ODI centuries. The No. 1 Ranked ODI batsman. Meet Virat Kohli."
@@ -88,7 +90,7 @@ function SearchPage({match}) {
                 title="A tribute to MS Dhoni"
                 image="https://i.ytimg.com/vi/b4OH3vBANa4/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDmh_AJCWnnXwlpdUS3Via01I-nvg"                                                                            
                 timestamp="1 month ago"
-            /> */}
+            />
 
         </div>
     )

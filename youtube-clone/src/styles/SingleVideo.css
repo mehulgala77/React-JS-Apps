@@ -1,0 +1,53 @@
+
+.singleVideo {
+    display: flex;
+
+    margin-top: 20px;
+    margin-bottom: 80px;
+
+    padding: 0 30px;
+}
+
+.singleVideo__details {
+    flex: 0.65;
+
+    display: flex;
+    justify-content: center;
+}
+
+.singleVideo__details_container {
+    width: 90%;
+}
+
+.singleVideo__embed {
+    position: relative;
+    height: 450px;
+
+    overflow: hidden;
+}
+
+iframe {
+    border: none;
+    outline: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.singleVideo__title {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.singleVideo__channel {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #606060;
+}
+
+.singleVideo__relatedvideos {
+    flex: 0.35;
+}

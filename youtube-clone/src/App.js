@@ -5,6 +5,7 @@ import Header from './components/Header'
 import RecommendedVideos from './components/RecommendedVideos';
 import Sidebar from './components/Sidebar';
 import SearchPage from './components/SearchPage'
+import SingleVideo from './components/SingleVideo'
 
 import {
   BrowserRouter as Router,
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <Header />
       <Switch>
+        <Route path="/video/:videoId" exact component={SingleVideo} />
         <Route path="/search/:searchTerm" exact 
           render={(props) => (
             <div className="app">

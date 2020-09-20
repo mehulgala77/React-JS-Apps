@@ -13,7 +13,7 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary'
 import HistoryIcon from '@material-ui/icons/History'
 import OndemandVideoIcon from '@material-ui/icons/OndemandVideo'
 import WatchLaterIcon from '@material-ui/icons/WatchLater'
-import ThumbDownAltOutlinedIcon from '@material-ui/icons/ThumbDownAltOutlined'
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined'
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined'
 
 function Sidebar() {
@@ -22,14 +22,14 @@ function Sidebar() {
 
             {/* Note: Pass component as prop */}
             <SidebarRow selected Icon={HomeIcon} title="Home" />
-            <SidebarRow Icon={WhatshotIcon} title="Trending" />
+            <SidebarRow Icon={WhatshotIcon} title="Recommended" />
             <SidebarRow Icon={SubscriptionsIcon} title="Subscription" />
             <hr />
             <SidebarRow Icon={VideoLibraryIcon} title="Library" />
             <SidebarRow Icon={HistoryIcon} title="History" />
             <SidebarRow Icon={OndemandVideoIcon} title="Your videos" />
             <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
-            <SidebarRow Icon={ThumbDownAltOutlinedIcon} title="Liked videos" />
+            <SidebarRow Icon={ThumbUpAltOutlinedIcon} title="Liked videos" />
             <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show more" />
             <hr />
 

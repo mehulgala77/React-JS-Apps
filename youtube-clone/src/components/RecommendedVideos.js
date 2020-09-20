@@ -2,28 +2,33 @@
 import React from 'react'
 import '../styles/RecommendedVideos.css'
 import VideoCard from './VideoCard'
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 
 import { useFetchRecommendedVideos } from '../hooks/useFetchVideos'
 
 function RecommendedVideos() {
 
-    // const videos = useFetchRecommendedVideos()
+    const videos = useFetchRecommendedVideos()
+
+    console.log(videos);
 
     return (
         <div className="recommendedVideos">
             <div className="recommendedVideos__container">
-                <h2>Recommended</h2>
+                <h2> <TrendingUpIcon /> Trending</h2>
                 <div className="recommendedVideos__videos">
 
-                    {/* {videos.map(video => (
+                    {videos.map(video => (
                         <VideoCard 
                             title={video.snippet.title}
                             channel={video.snippet.channelTitle}
                             image={video.snippet.thumbnails.high.url}
-                            key={video.id.videoId}
+                            key={video.id}
+                            videoId={video.id}
                         />                        
-                    ))} */}
+                    ))}
 
+                    {/* This data is just for testing purpose. */}
                     {/* <VideoCard 
                         title="Neil deGrasse Tyson: 3 mind-blowing space facts | Big Think"
                         views="844K views"

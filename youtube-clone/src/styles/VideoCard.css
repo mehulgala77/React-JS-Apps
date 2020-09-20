@@ -1,4 +1,9 @@
 
+.videoCard__Link {
+    color: black;
+    text-decoration: none;
+}
+
 .videoCard {
     width: 265px;
     margin-bottom: 40px;

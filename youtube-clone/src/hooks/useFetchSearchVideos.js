@@ -17,7 +17,13 @@ export const usefetchSearchVideos = async (searchTerm, noOfVideos = 10 ) => {
         q
     })
 
-    const response = await fetch(baseURL + params)
-    const data = await response.json()
-    return data.items
+    try {
+
+        const response = await fetch(baseURL + params)
+        const data = await response.json()
+        return data.items
+
+    } catch (err) {
+        console.error(err);
+    }
 }
