@@ -100,16 +100,16 @@ function LineGraph({ caseType = 'cases', ...props }) {
             It is called optional chaining. */}
             {data?.length > 0 && (
                 <Line
-                data={{
-                    datasets: [
-                        {
-                            backgroundColor: "rgba(204, 16, 52, 0.5)",
-                            borderColor: "#CC1034",
-                            data: data
-                        }
-                    ]
-                }}
-                options={options}
+                    data={{
+                        datasets: [
+                            {
+                                backgroundColor: "rgba(204, 16, 52, 0.5)",
+                                borderColor: "#CC1034",
+                                data: data
+                            }
+                        ]
+                    }}
+                    options={options}
                 />
             )}
         </div>
