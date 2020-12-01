@@ -1,0 +1,27 @@
+
+.Palette {
+    /* Palette takes full viewport height */
+    height: 100vh;
+
+    /* Note: To avoid showing scroll bar when the overlay is scaled out. */
+    overflow: hidden;
+}
+
+.Palette-colors {
+    /* Colors takes up 90% of the palette height */
+    height: 90%;
+}
+
+.Palette-footer {
+    height: 4vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.emoji {
+    margin: 0 1rem;
+}
