@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 import SmallCard from '../components/SmallCard'
 import MediumCard from '../components/MediumCard'
+import LargeCard from '../components/LargeCard'
 
 export default function Home({ exploreData, cardsData }) {
   return (
@@ -37,14 +38,25 @@ export default function Home({ exploreData, cardsData }) {
         <article>
           <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
 
-          {cardsData?.map(item => (
-            <MediumCard 
-              key={item.img}
-              img={item.img}
-              title={item.title}
-            />
-          ))}
+          {/* Carosel implementation */}
+          <div className='flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3'>
+            {cardsData?.map(item => (
+              <MediumCard 
+                key={item.img}
+                img={item.img}
+                title={item.title}
+              />
+            ))}
+          </div>
         </article>
+
+        {/* Large Cards */}
+        <LargeCard 
+          img='https://links.papareact.com/4cj'
+          title='The Greatest Outdoors'
+          desc='Wishlists curated by Airbnb'
+          buttonText='Get Inspired'
+        />
 
       </main>
 
