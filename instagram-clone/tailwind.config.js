@@ -7,6 +7,10 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms')
+    // Takeaway: Added form plugin to customize html form elements.
+    require('@tailwindcss/forms'),
+    // Takeaway: Added scroll bar plugin to customize html scrollbars.
+    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar-hide'),
   ],
 }
