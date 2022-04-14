@@ -1,6 +1,8 @@
 import React from 'react'
+import MiniProfile from './MiniProfile'
 import Posts from './Posts'
 import Stories from './Stories'
+import Suggestions from './Suggestions'
 
 function Feed() {
   return (
@@ -11,9 +13,12 @@ function Feed() {
         <Posts />
       </section>
 
-      <section>
-        {/* Mini Profile */}
-        {/* Suggestions */}
+      <section className='hidden md:inline-grid md:col-span-1'>
+        {/* Takeaway: Tto handle top alignment of a section in grid */}
+        <div className='fixed top-20'>
+          <MiniProfile />
+          <Suggestions />
+        </div>
       </section>
 
     </main>
