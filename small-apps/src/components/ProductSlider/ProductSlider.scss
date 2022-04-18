@@ -1,0 +1,47 @@
+.product-slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Takeaway: To give spacing between slider items
+
+  // /* the parent */
+  .slick-list {
+    margin: 0 -20px;
+  }
+
+  .slider-container {
+    position: relative;
+
+    .btn-container {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .btn {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.8);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 28px;
+      }
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+  }
+}
