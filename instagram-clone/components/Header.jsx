@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 
+import { useRecoilState } from 'recoil';
+import { modalState } from '../atoms/modalAtom';
+
 import {
   SearchIcon, 
   PlusCircleIcon,
@@ -18,6 +21,11 @@ function Header() {
   // Takeaway: Fetch user session fron next-auth
   const { data: session } = useSession();
   const router = useRouter();
+
+  // Takeaway: How to extract state from recoil.
+  const [open, setOpen] = useRecoilState(modalState);
+  // Takeaway: To get a readonly value of recoil state.
+  // const open = useRecoilValue(modalState);
 
   // Takeaway: Handle router in next js.
   const goToHome = () => router.push('/');
@@ -80,7 +88,7 @@ function Header() {
               </div>
 
             
-              <PlusCircleIcon className='nav-btn' />
+              <PlusCircleIcon onClick={() => setOpen(true)} className='nav-btn' />
               <UserGroupIcon className='nav-btn' />
               <HeartIcon className='nav-btn' />
 

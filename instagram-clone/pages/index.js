@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Feed from '../components/Feed';
 
 import Header from '../components/Header';
+import Modal from '../components/Modal';
 
 // Takeaway: Do not using helper with-tailwindcss example project for next js. 
 // Follow nextjs docs for adding tailwindcss and it will work smoothly.
@@ -16,13 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* Modal */}
+      <Modal />
+
       {/* Header */}
       <Header />
 
       {/* Feed */}
       <Feed />
-
-      {/* Modal */}
 
     </div>
   )
