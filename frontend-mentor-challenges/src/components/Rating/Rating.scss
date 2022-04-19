@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+.rating-container {
+  color: white;
+  background-color: hsl(216, 12%, 8%);
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+
+    @media (min-width: 768px) {
+      width: 300px; 
+    }
+
+    .star-img-container {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      padding: 15px;
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      color: hsl(216, 12%, 54%);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .ratings {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .rating {
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          color: white;
+          background-color: hsl(216, 12%, 54%);
+        }
+
+        &.active {
+          color: white;
+          background-color: hsl(25, 97%, 53%);
+        }
+      }
+    }
+
+    .submit {
+      cursor: pointer;
+      background-color: hsl(25, 97%, 53%);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      text-align: center;
+      text-transform: uppercase;
+
+      &:hover {
+        color: hsl(25, 97%, 53%);
+        background-color: white;
+      }
+    }
+
+    .submit-container {
+      text-align: center;
+
+      .thank-you-container {
+        margin: 0 auto;
+        padding: 20px 0 0;
+        width: 150px;
+
+        > img {
+          width: 100%;
+        }
+      }
+  
+      .final-selection-msg {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        color: hsl(25, 97%, 53%);
+        display: inline-block;
+        font-size: 12px;
+        padding: 8px 20px;
+      }
+
+      .thank-you-title {
+        margin-bottom: 10px;
+      }
+
+      .thank-you-desc {
+        color: hsl(216, 12%, 54%);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+    }
+  }
+}

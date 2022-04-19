@@ -1,6 +1,6 @@
 import React from 'react';
 
-import QRCodeImg from '../../assets/image-qr-code.png';
+import QRCodeImg from './assets/image-qr-code.png';
 import './QRCode.scss';
 
 function QRCode() {

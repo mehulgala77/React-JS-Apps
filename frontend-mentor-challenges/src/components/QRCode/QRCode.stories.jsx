@@ -7,6 +7,4 @@ export default {
   component: QRCode,
 };
 
-const Template = (args) => <QRCode {...args} />;
-
-export const Base = Template.bind({});
+export const Base = () => <QRCode/>
