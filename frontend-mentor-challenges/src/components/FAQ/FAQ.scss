@@ -48,7 +48,6 @@
         .faq-item {
           cursor: pointer;
           border-bottom: 1px solid hsl(240, 5%, 91%);
-          transition: all 1s ease-in-out;
 
           .question-content {
             color: hsl(240, 6%, 50%);
@@ -60,14 +59,15 @@
 
             .arrow {
               transition: transform .3s ease-in-out;
-              colot: hsl(14, 88%, 65%);
+              color: hsl(14, 88%, 65%);
             }
           }
   
           .answer-content {
-            display: none;
-            opacity: 0.5;
-            padding: 0 40px 20px 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all .3s ease-out;
+            opacity: 0;
           }
 
           &.open {
@@ -80,7 +80,10 @@
             }
 
             .answer-content {
-              display: block;
+              max-height: 1000px;
+              padding: 0 40px 20px 0;
+              opacity: 0.5;
+              transition: all .3s ease-in;
             }
           }
         }
