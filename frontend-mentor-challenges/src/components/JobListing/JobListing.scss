@@ -29,13 +29,16 @@ body {
     max-width: 1000px;
     width: 100%;
 
+    &.filter {
+      top: -135px;
+    }
+
     .filter-selections {
       background-color: white;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       border-radius: 5px;
       padding: 20px 50px;
-      position: absolute;
-      top: -135px;
+      margin-bottom: 62px;
       width: 100%;
 
       display: flex;
@@ -80,6 +83,23 @@ body {
         text-align: right;
         text-decoration: underline;
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .jobs-section  {
+      .filter-selections {
+        margin-left: 20px;
+        padding: 20px;
+        width: calc(100% - 40px);
+
+        .selections {
+          display: flex;
+          flex-wrap: wrap;
+          // Takeaway: Gap for flexbox
+          row-gap: 10px;
+        }
+      } 
     }
   }
 }

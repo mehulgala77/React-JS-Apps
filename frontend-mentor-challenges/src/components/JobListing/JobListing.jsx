@@ -8,6 +8,7 @@ import { jobs } from './JobListing.mock';
 import bgHeaderDesktop from './assets/bg-header-desktop.svg';
 
 import removeIcon from './assets/icon-remove.svg';
+import classNames from 'classnames';
 
 function JobListing() {
   const [selections, setSelections] = useState([]);
@@ -15,17 +16,19 @@ function JobListing() {
   const displaySelections = () => (
     <div className='filter-selections'>
 
-      {selections.map(selection => (
-        <div className='selection' key={selection}>
-          <span className='text'>{selection}</span>
-          <div
-            className='img-container'
-            onClick={() => removeSelection(selection)}
-          >
-            <img className='img' src={removeIcon} alt="remove-icon" />
+      <div className='selections'>
+        {selections.map(selection => (
+          <div className='selection' key={selection}>
+            <span className='text'>{selection}</span>
+            <div
+              className='img-container'
+              onClick={() => removeSelection(selection)}
+            >
+              <img className='img' src={removeIcon} alt="remove-icon" />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <span 
         className='clear-all'
@@ -65,7 +68,14 @@ function JobListing() {
         <img className='bg-header-img' src={bgHeaderDesktop} alt='bg-header' />
       </header>
 
-      <div className='jobs-section'>
+      <div
+        className={classNames({
+          'jobs-section': true,
+          'filter': selections.length > 0
+        })}
+      >
+        {selections.length > 0 && displaySelections()}
+
         {jobs.map((job, index) => (
           <Job 
             addSelection={addSelection}
@@ -74,7 +84,6 @@ function JobListing() {
             selections={selections}
           />
         ))}
-        {selections.length > 0 && displaySelections()}
         </div>
     </div>
   )
