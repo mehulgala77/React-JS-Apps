@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames';
 import './Job.scss';
 
 function Job({ job, addSelection, selections }) {
@@ -26,7 +27,10 @@ function Job({ job, addSelection, selections }) {
   }
 
   const jobPostMarkup = () => (
-    <div className='job-post'>
+    <div className={classNames({
+      'job-post': true,
+      featured: job.featured
+    })}>
       <img src={require(`./assets/${job.logo}`)} alt="job-logo" />
       <div className='job-details'>
         <div className='title'>

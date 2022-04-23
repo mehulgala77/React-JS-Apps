@@ -8,6 +8,10 @@
   padding: 20px 25px;
   margin-bottom: 30px;
 
+  &.featured {
+    border-left: 5px solid hsl(180, 29%, 50%);
+  }
+
   .job-details {
     margin-left: 30px;
 
