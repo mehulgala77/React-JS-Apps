@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+body {
+  background-color: hsl(180, 52%, 96%);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 .job-listing-container {
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 15px;
-
-  min-height: 100vh;
-  background-color: hsl(180, 52%, 96%);
 
   .bg-header-img-container {
     height: 100px;
@@ -18,8 +23,63 @@
   }
 
   .jobs-section {
-    margin: 50px auto;
+    position: relative;
+    padding-bottom: 50px;
+    margin: 100px auto 50px;
     max-width: 1000px;
     width: 100%;
+
+    .filter-selections {
+      background-color: white;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 5px;
+      padding: 20px 50px;
+      position: absolute;
+      top: -135px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+
+      .selection {
+        background-color: hsl(180, 31%, 95%);
+        border-radius: 5px;
+        color: hsl(180, 29%, 50%);
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 15px;
+
+        display: inline-flex;
+        align-items: center;
+
+        .text {
+          padding: 7px;
+        }
+
+        .img-container {
+          cursor: pointer;
+          padding: 7px;
+          background-color: hsl(180, 29%, 50%);
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: hsl(180, 14%, 20%);
+          }
+        }
+      }
+
+      .clear-all {
+        cursor: pointer;
+        color: hsl(180, 29%, 50%);
+        flex: 1;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: right;
+        text-decoration: underline;
+      }
+    }
   }
 }

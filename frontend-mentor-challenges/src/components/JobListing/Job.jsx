@@ -1,8 +1,31 @@
 import React from 'react'
 import './Job.scss';
 
-function Job({ job }) {
-  return (
+function Job({ job, addSelection, selections }) {
+
+  const isMatched = (selection) => {
+    if (selection === job.role) {
+      return true;
+    }
+
+    if (selection === job.level) {
+      return true;
+    }
+
+    const found = job.skills.find(skill => selection === skill);
+    return found;
+  }
+
+  const isSelected = () => {
+    if (selections.length === 0) {
+      return true;
+    }
+
+    const found = selections.every(selection => isMatched(selection));
+    return found;
+  }
+
+  const jobPostMarkup = () => (
     <div className='job-post'>
       <img src={require(`./assets/${job.logo}`)} alt="job-logo" />
       <div className='job-details'>
@@ -21,14 +44,25 @@ function Job({ job }) {
         </div>
       </div>
       <div className='job-filters'>
-        <div>{job.role}</div>
-        <div>{job.level}</div>
+        <div onClick={() => addSelection(job.role)}>
+          {job.role}
+        </div>
+        <div onClick={() => addSelection(job.level)}>
+          {job.level}
+        </div>
         {job.skills.map((skill, index) => (
-          <div key={index}>{skill}</div>
+          <div 
+            key={index}
+            onClick={() => addSelection(skill)}
+          >
+            {skill}
+          </div>
         ))}
       </div>
     </div>
-  )
+  );
+
+  return isSelected() ? jobPostMarkup() : null;
 }
 
 export default Job
