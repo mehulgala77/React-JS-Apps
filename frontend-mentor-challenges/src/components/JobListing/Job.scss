@@ -94,4 +94,37 @@
       }
     }
   }
+
+  @media (max-width: 1024px) {
+    align-items: stretch;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 40px;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      top: -18px;
+      width: 40px;
+    }
+
+    .job-details {
+      border-bottom: 1px solid lightgray;
+      margin-left: 0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    .job-filters {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      > * {
+        margin-left: 0;
+        margin-right: 15px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

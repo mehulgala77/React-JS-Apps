@@ -5,7 +5,8 @@ import Job from './Job';
 
 import { jobs } from './JobListing.mock';
 
-import bgHeader from './assets/bg-header-desktop.svg';
+import bgHeaderDesktop from './assets/bg-header-desktop.svg';
+
 import removeIcon from './assets/icon-remove.svg';
 
 function JobListing() {
@@ -61,7 +62,7 @@ function JobListing() {
   return (
     <div className='job-listing-container'>
       <header className='bg-header-img-container'>
-        <img className='bg-header-img' src={bgHeader} alt='bg-header' />
+        <img className='bg-header-img' src={bgHeaderDesktop} alt='bg-header' />
       </header>
 
       <div className='jobs-section'>

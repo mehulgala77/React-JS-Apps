@@ -31,7 +31,11 @@ function Job({ job, addSelection, selections }) {
       'job-post': true,
       featured: job.featured
     })}>
-      <img src={require(`./assets/${job.logo}`)} alt="job-logo" />
+      <img 
+        className='logo' 
+        src={require(`./assets/${job.logo}`)} 
+        alt="job-logo" 
+      />
       <div className='job-details'>
         <div className='title'>
           <h3 className='company'>{job.company}</h3>
