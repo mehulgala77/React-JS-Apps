@@ -30,7 +30,7 @@ const Video = ({ video }) => {
     setCardAnimate(false);
   };
 
-  const videoContent = () => (
+  const videoContent = (showActions = true) => (
     <>
       <img 
         alt='thumbnail-img' 
@@ -54,20 +54,20 @@ const Video = ({ video }) => {
           </p>
           <p className='created-at-date'>{formatDate(video.snippet.publishedAt)}</p>
         </div>
-        <div className='actions'>
+        {showActions && <div className='actions'>
           <img 
             alt='three-dots' 
             className='three-dots'
             src={threeDots} 
           />
-        </div>
+        </div>}
       </div>
     </>
   );
 
   const videoCard = () => (
     <div className={`video-card ${cardShow && 'show'} ${cardAnimate && 'animate'}`}>
-      {videoContent()}
+      {videoContent(false)}
       <div className='cta-btn'>
         Watch Later
       </div>
