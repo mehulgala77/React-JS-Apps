@@ -69,14 +69,37 @@
 }
 
 .video-card {
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
 
-  transform: scale(1.1);
+  visibility: hidden;
   display: none;
 
   &.show {
     display: block;
   }
+
+  &.animate {
+    visibility: visible;
+    transform: scale(1.1);
+  }
+
+  .content {
+    padding: 10px;
+  }
+}
+
+.cta-btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 10px;
+
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
 }
