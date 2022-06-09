@@ -1,16 +1,49 @@
 import './Video.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
+
 import ReactTooltip from 'react-tooltip';
 import { formatDate } from '../../utils/dateHelper';
 import threeDots from '../../assets/three-dots-vertical.svg';
 
 const Video = ({ video }) => {
 
-  console.log('video', video);
+  const [cardShow, setCardShow] = useState(false);
+  const [timer, setTimer] = useState(null);
+
+  const enableCard = () => {
+    const timer = setTimeout(() => {
+      setCardShow(true);
+    }, 1000);
+
+    setTimer(timer);
+  }
+
+  const disableCard = () => {
+    clearTimeout(timer);
+    setTimer(null);
+    setCardShow(false);
+  };
+
+  const videoCard = () => (
+    <div className={`video-card ${cardShow && 'show'}`}>
+      <img 
+        alt='thumbnail-img' 
+        className='thumbnail-img'
+        src={video.snippet.thumbnails.high.url} 
+      />
+      <div className='content'>
+        <h1>Hello</h1>
+      </div>
+  </div>
+  );
 
   return (
-    <div className='video-card'>
+    <div 
+      className='video-container'
+      onMouseEnter={() => enableCard()}
+      onMouseLeave={() => disableCard()}
+    >
       <img 
         alt='thumbnail-img' 
         className='thumbnail-img'
@@ -42,10 +75,11 @@ const Video = ({ video }) => {
         </div>
       </div>
       <ReactTooltip 
-        delayShow='500'
+        delayShow={500}
         place='bottom' 
         solid='solid' 
       />
+      {videoCard()}
     </div>
   )
 }
