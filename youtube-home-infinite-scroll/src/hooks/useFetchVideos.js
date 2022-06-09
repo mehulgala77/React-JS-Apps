@@ -38,6 +38,10 @@ export const useFetchVideos = (token) => {
           setLoading(true);
           setError(false);
 
+          // Note: Youtube API has very low daily usage quota. 
+          // And a single search request takes substantial chunk from the quota. 
+          // Hence writing this mock to reduce dependency on the actual API.
+
           const response = {
             data: mockVideos
           };
