@@ -32,7 +32,7 @@ export const useFetchVideos = (token) => {
       if (pageToken) {
         params.pageToken = pageToken;
       }
-    
+
       try {
     
           setLoading(true);
@@ -48,7 +48,8 @@ export const useFetchVideos = (token) => {
             return [...prevVideos, ...response.data.items];
           });
 
-          setNextPageToken(response.data.nextPageToken);
+          const random = String(Math.floor(Math.random() * 10000));
+          setNextPageToken(response.data.nextPageToken + random);
           setError(false);
     
       } catch (err) {
