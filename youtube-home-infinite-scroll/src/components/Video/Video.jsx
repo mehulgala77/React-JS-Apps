@@ -1,6 +1,7 @@
 import './Video.scss';
 
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import { formatDate } from '../../utils/dateHelper';
 import threeDots from '../../assets/three-dots-vertical.svg';
 
@@ -24,8 +25,12 @@ const Video = ({ video }) => {
             />
         </div>
         <div className='fields'>
-          <h4 className='title'>{video.snippet.title}</h4>
-          <p className='channel-title'>{video.snippet.channelTitle}</p>
+          <h4 className='title' data-tip={video.snippet.title}>
+            {video.snippet.title}
+            </h4>
+          <p className='channel-title' data-tip={video.snippet.channelTitle}>
+            {video.snippet.channelTitle}
+          </p>
           <p className='created-at-date'>{formatDate(video.snippet.publishedAt)}</p>
         </div>
         <div className='actions'>
@@ -36,6 +41,11 @@ const Video = ({ video }) => {
           />
         </div>
       </div>
+      <ReactTooltip 
+        delayShow='500'
+        place='bottom' 
+        solid='solid' 
+      />
     </div>
   )
 }
