@@ -1,0 +1,67 @@
+.video-card {
+  .thumbnail-img {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .content {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 15px;
+
+    .avatar {
+      width: 40px;
+      min-width: 40px;
+
+      .avatar-img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    .fields {
+      margin-left: 15px;
+
+      .title {
+        margin-top: 0;
+        margin-bottom: 10px;
+
+        line-height: 1.5em;
+        height: 3em;       /* height is 2x line-height, so two lines will display */
+        overflow: hidden;  /* prevents extra lines from being visible */
+      }
+
+      .channel-title {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .created-at-date {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .actions {
+      margin-left: 15px;
+      padding-top: 5px;
+      width: 40px;
+
+      .three-dots {
+        visibility: hidden;
+        cursor: pointer;
+        width: 20px;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  
+    .actions {
+      .three-dots {
+        visibility: visible;
+      }
+    }
+  }
+}

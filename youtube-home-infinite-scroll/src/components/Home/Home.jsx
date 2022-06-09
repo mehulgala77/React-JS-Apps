@@ -2,6 +2,7 @@ import './Home.scss';
 
 import React, { useCallback, useRef, useState } from 'react'
 
+import Video from '../Video/Video';
 import { useFetchVideos } from '../../hooks/useFetchVideos';
 
 const Home = () => {
@@ -33,23 +34,25 @@ const Home = () => {
   }, [loading, token])
 
   return (
-    <div>
-      {videos.map((video, index) => {
-        if (index === videos.length - 1) {
-          return (
-            <div key={index} ref={lastVideoElementRef}>
-              {video?.snippet?.title}
-            </div>
-          );
-        }
-        else {
-          return (
-            <div key={index}>
-              {video?.snippet?.title}
-            </div>
-          );
-        }
-      })}
+    <div className='home'>
+      <div className='videos-container'>
+        {videos.map((video, index) => {
+          if (index === videos.length - 1) {
+            return (
+              <div key={index} ref={lastVideoElementRef}>
+                {video?.snippet?.title}
+              </div>
+            );
+          }
+          else {
+            return (
+              <div key={index}>
+                <Video video={video} />
+              </div>
+            );
+          }
+        })}
+      </div>
       {error && <div>Oops! Something went wrong</div>}
       {loading && <div>Loading</div>}
     </div>
